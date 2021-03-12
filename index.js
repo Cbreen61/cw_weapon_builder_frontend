@@ -32,5 +32,44 @@ function getWeapons(){
 
 function createFormHandler(e) {
     e.preventDefault()
-    console.log(e);
+    const nameInput = document.querySelector('#input-name').value
+    const wtInput = document.querySelector('#input-weapon_type').value
+    const imageInput = document.querySelector('#input-image').value
+    const muzzleInput = document.querySelector('#input-muzzle').value
+    const barrelInput = document.querySelector('#input-barrel').value
+    const laserInput = document.querySelector('#input-laser').value
+    const opticInput = document.querySelector('#input-optic').value
+    const stockInput = document.querySelector('#input-stock').value
+    const underbarrelInput = document.querySelector('#input-underbarrel').value
+    const ammunitionInput = document.querySelector('#input-ammunition').value
+    const reargripInput = document.querySelector('#input-rear_grip').value
+    const perkInput = document.querySelector('#input-perk').value
+    const gameID = parseInt(document.querySelector('#games').value)
+    weaponFetch(nameInput, wtInput, imageInput, muzzleInput, barrelInput, laserInput, opticInput, stockInput, underbarrelInput, ammunitionInput, reargripInput, perkInput, gameID)
+    
+}
+function weaponFetch(name,weapon_type, image, muzzle, barrel, laser, optic, stock, underbarrel, ammunition, rear_grip, perk, game_id){
+    fetch(BASE_URL,{
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({
+            name: name,
+            weapon_type: weapon_type,
+            image: image,
+            muzzle: muzzle,
+            barrel: barrel,
+            laser: laser,
+            optic: optic,
+            stock: stock,
+            underbarrel: underbarrel,
+            ammunition: ammunition,
+            rear_grip: rear_grip,
+            perk: perk,
+            game_id: game_id
+        })
+    })
+    .then(resp => resp.json())
+    .then(weapon =>{
+        console.log(weapon);
+    })
 }
