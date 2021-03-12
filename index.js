@@ -15,17 +15,7 @@ function getWeapons(){
     .then(resp => resp.json())
     .then(weapons => {
         weapons.forEach(weapon => {
-            const weaponMarkup = `
-            <div data-id=${weapon.id}>
-            <p>${weapon.name}</p>
-            <p>${weapon.weapon_type}<p>
-            <img src=${weapon.image}>
-            <li>${weapon.attachments.laser}</li>
-            <li>${weapon.game.name}</li>
-            </div>`;
-
-            document.querySelector('#weapons-container').innerHTML += weaponMarkup
-            
+            render(weapon)
         })
     })
 }
@@ -50,6 +40,7 @@ function createFormHandler(e) {
 }
 function weaponFetch(name,weapon_type, image, muzzle, barrel, laser, optic, stock, underbarrel, ammunition, rear_grip, perk, game_id){
     const data = {name,weapon_type, image, muzzle, barrel, laser, optic, stock, underbarrel, ammunition, rear_grip, perk, game_id}
+    
     fetch(BASE_URL,{
         method: "POST",
         headers: {"Content-Type":"application/json"},
@@ -57,16 +48,29 @@ function weaponFetch(name,weapon_type, image, muzzle, barrel, laser, optic, stoc
     })
     .then(resp => resp.json())
     .then(weapon =>{ 
-        const weaponMarkup = `
-            <div data-id=${weapon.id}>
+        render(weapon);
+    })
+}
+
+function render(weapon){
+    const weaponMarkup = `
+         <div data-id=${weapon.id}>
             <p>${weapon.name}</p>
             <p>${weapon.weapon_type}<p>
             <img src=${weapon.image}>
+            <li>${weapon.attachments.muzzle}</li>
+            <li>${weapon.attachments.barrel}</li>
             <li>${weapon.attachments.laser}</li>
+            <li>${weapon.attachments.optic}</li>
+            <li>${weapon.attachments.stock}</li>
+            <li>${weapon.attachments.underbarrel}</li>
+            <li>${weapon.attachments.ammunition}</li>
+            <li>${weapon.attachments.rear_grip}</li>
+            <li>${weapon.attachments.perk}</li>
             <li>${weapon.game.name}</li>
-            </div>`;
+        </div>`;
 
-            document.querySelector('#weapons-container').innerHTML += weaponMarkup
+        document.querySelector('#weapons-container').innerHTML += weaponMarkup
        
-    })
+
 }
