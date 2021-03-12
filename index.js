@@ -3,6 +3,11 @@ const BASE_URL = "http://[::1]:3000/api/v1/weapons"
 document.addEventListener('DOMContentLoaded', ()=>{
     getWeapons()
 
+    const createWeaponForm = document.querySelector("#create-weapon-form")
+
+    createWeaponForm.addEventListener("submit", (e) =>
+    createFormHandler(e))
+
 })
 
 function getWeapons(){
@@ -23,4 +28,9 @@ function getWeapons(){
             
         })
     })
+}
+
+function createFormHandler(e) {
+    e.preventDefault()
+    console.log(e);
 }
