@@ -17,7 +17,7 @@ class Weapon {
         Weapon.all.push(this)
 
     }
-    
+
     renderWeapon(){
         return `
              <div data-id=${this.id}>

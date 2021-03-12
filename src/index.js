@@ -58,3 +58,4 @@ function weaponFetch(name,weapon_type, image, muzzle, barrel, laser, optic, stoc
     })
 }
 
+
