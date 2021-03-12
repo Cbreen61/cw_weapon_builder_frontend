@@ -15,6 +15,7 @@ function getWeapons(){
     .then(resp => resp.json())
     .then(weapons => {
         weapons.forEach(weapon => {
+            let newWeapon = new Weapon(weapon.id, weapon.name, weapon.weapon_type, weapon.image, weapon.muzzle, weapon.barrel, weapon.laser, weapon.optic, weapon.stock, weapon.underbarrel, weapon.ammunition, weapon.rear_grip, weapon.perk, weapon.game)
             render(weapon)
         })
     })
