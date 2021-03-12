@@ -8,12 +8,34 @@
     <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
-    <div id="weapons-form">
+    <div class="weapons-form">
+        <form id="create-weapon-form" style="">
+            <h3>Create a Weapon</h3>
+            <input id="input-name" type="text" value="" placeholder="Enter weapon name" class="input-text">
+            <input id="input-weapon_type" type="text" value="" class="input-text">
+            <input id="input-image" type="text" value="" class="input-text">
+            <input id="input-muzzle" type="text" value="" class="input-text">
+            <input id="input-barrel" type="text" value="" class="input-text">
+            <input id="input-laser" type="text" value="" class="input-text">
+            <input id="input-optic" type="text" value="" class="input-text">
+            <input id="input-stock" type="text" value="" class="input-text">
+            <input id="input-underbarrel" type="text" value="" class="input-text">
+            <input id="input-ammunition" type="text" value="" class="input-text">
+            <input id="input-rear_gip" type="text" value="" class="input-text">
+            <input id="input-perk" type="text" value="" class="input-text">
+
+            <p>Choose A Game </p>
+            <select id="games" name="games">
+                <option value="1">WarZone</option>
+                <option value="2">Black-Ops Cold War</option>
+            </select>
+        <br><br>
+
+        <input id= 'create-button' type="submit" name="submit" value="Create New Weapon" class="submit">
+        <button type="button" class="btn btn-primary">Primary</button>
 
 
-
-
-
+        </form>
     </div>
     <div id="weapons-container">
 
