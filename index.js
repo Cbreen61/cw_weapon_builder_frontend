@@ -55,19 +55,19 @@ function weaponFetch(name,weapon_type, image, muzzle, barrel, laser, optic, stoc
 function render(weapon){
     const weaponMarkup = `
          <div data-id=${weapon.id}>
-            <p>${weapon.name}</p>
-            <p>${weapon.weapon_type}<p>
+            <h2>Weapon Name:${weapon.name}</h2>
             <img src=${weapon.image}>
-            <li>${weapon.attachments.muzzle}</li>
-            <li>${weapon.attachments.barrel}</li>
-            <li>${weapon.attachments.laser}</li>
-            <li>${weapon.attachments.optic}</li>
-            <li>${weapon.attachments.stock}</li>
-            <li>${weapon.attachments.underbarrel}</li>
-            <li>${weapon.attachments.ammunition}</li>
-            <li>${weapon.attachments.rear_grip}</li>
-            <li>${weapon.attachments.perk}</li>
-            <li>${weapon.game.name}</li>
+            <li>Weapon Type:${weapon.weapon_type}</li>
+            <li>Muzzle:${weapon.attachments.muzzle || ""}</li>
+            <li>Barrel:${weapon.attachments.barrel || ""}</li>
+            <li>Laser:${weapon.attachments.laser || ""}</li>
+            <li>Optic:${weapon.attachments.optic || ""}</li>
+            <li>Stock:${weapon.attachments.stock || ""}</li>
+            <li>Underbarrel:${weapon.attachments.underbarrel || ""}</li>
+            <li>Ammunition:${weapon.attachments.ammunition || ""}</li>
+            <li>Rear Grip:${weapon.attachments.rear_grip || ""}</li>
+            <li>Perk:${weapon.attachments.perk || ""}</li>
+            <li>Game:${weapon.game.name || ""}</li>
         </div>`;
 
         document.querySelector('#weapons-container').innerHTML += weaponMarkup
