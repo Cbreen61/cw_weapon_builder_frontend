@@ -49,27 +49,24 @@ function createFormHandler(e) {
     
 }
 function weaponFetch(name,weapon_type, image, muzzle, barrel, laser, optic, stock, underbarrel, ammunition, rear_grip, perk, game_id){
+    const data = {name,weapon_type, image, muzzle, barrel, laser, optic, stock, underbarrel, ammunition, rear_grip, perk, game_id}
     fetch(BASE_URL,{
         method: "POST",
         headers: {"Content-Type":"application/json"},
-        body: JSON.stringify({
-            name: name,
-            weapon_type: weapon_type,
-            image: image,
-            muzzle: muzzle,
-            barrel: barrel,
-            laser: laser,
-            optic: optic,
-            stock: stock,
-            underbarrel: underbarrel,
-            ammunition: ammunition,
-            rear_grip: rear_grip,
-            perk: perk,
-            game_id: game_id
-        })
+        body: JSON.stringify(data)
     })
     .then(resp => resp.json())
-    .then(weapon =>{
-        console.log(weapon);
+    .then(weapon =>{ 
+        const weaponMarkup = `
+            <div data-id=${weapon.id}>
+            <p>${weapon.name}</p>
+            <p>${weapon.weapon_type}<p>
+            <img src=${weapon.image}>
+            <li>${weapon.attachments.laser}</li>
+            <li>${weapon.game.name}</li>
+            </div>`;
+
+            document.querySelector('#weapons-container').innerHTML += weaponMarkup
+       
     })
 }
