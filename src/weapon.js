@@ -14,10 +14,32 @@ class Weapon {
         this.rear_grip = rear_grip
         this.perk = perk
         this.game = game
+        Weapon.all.push(this)
 
+    }
+    
+    renderWeapon(){
+        return `
+             <div data-id=${this.id}>
+                <h2>${this.name}</h2>
+                <img src=${this.image}>
+                <li>Weapon Type:${this.weapon_type}</li>
+                <li>Muzzle:${this.muzzle || ""}</li>
+                <li>Barrel:${this.barrel || ""}</li>
+                <li>Laser:${this.laser || ""}</li>
+                <li>Optic:${this.optic || ""}</li>
+                <li>Stock:${this.stock || ""}</li>
+                <li>Underbarrel:${this.underbarrel || ""}</li>
+                <li>Ammunition:${this.ammunition || ""}</li>
+                <li>Rear Grip:${this.rear_grip || ""}</li>
+                <li>Perk:${this.perk || ""}</li>
+                <li>Game:${this.game.name || ""}</li>
+            </div>`;
+    
     }
 
     
 
 
 }
+Weapon.all = [];
