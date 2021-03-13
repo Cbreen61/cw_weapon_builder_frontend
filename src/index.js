@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 })
 
+
 function getWeapons(){
     fetch(BASE_URL)
     .then(resp => resp.json())
@@ -23,6 +24,7 @@ function getWeapons(){
         })
     })
 }
+
 
 function createFormHandler(e) {
     e.preventDefault()
@@ -57,4 +59,5 @@ function weaponFetch(name,weapon_type, image, muzzle, barrel, laser, optic, stoc
         document.querySelector('#weapons-container').innerHTML +=
             newWeapon.renderWeapon()
     })
+    globalThis.location.reload();
 }
