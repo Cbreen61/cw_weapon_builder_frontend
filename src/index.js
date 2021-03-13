@@ -16,7 +16,6 @@ function getWeapons(){
     .then(resp => resp.json())
     .then(weapons => {
         weapons.forEach(weapon => {
-            console.log(weapon)
             let newWeapon = new Weapon(weapon.id, weapon.name, weapon.weapon_type, weapon.image, weapon.attachments.muzzle, weapon.attachments.barrel, weapon.attachments.laser, weapon.attachments.optic, weapon.attachments.stock, weapon.attachments.underbarrel, weapon.attachments.ammunition, weapon.attachments.rear_grip, weapon.attachments.perk, weapon.game)
             
             document.querySelector('#weapons-container').innerHTML +=
