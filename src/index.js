@@ -56,5 +56,4 @@ function weaponFetch(name,weapon_type, image, muzzle, barrel, laser, optic, stoc
         document.querySelector('#weapons-container').innerHTML +=
             newWeapon.renderWeapon()
     })
-    globalThis.location.reload();
 }

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+    <script type="text/javascript" src="src/index.js"></script>
+    <script type="text/javascript" src="src/weapon.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <div class="weapons-form">
+        <form id="create-weapon-form" style="">
+            <h3>Create a Weapon</h3>
+            <input id="input-name" type="text" value="" placeholder="Enter weapon name" class="input-text">
+            <input id="input-weapon_type" type="text" value="" placeholder="Enter weapon type" class="input-text">
+            <input id="input-image" type="text" value="" placeholder="Enter weapon image" class="input-text">
+            <input id="input-muzzle" type="text" value="" placeholder="Enter weapon muzzle" class="input-text">
+            <input id="input-barrel" type="text" value="" placeholder="Enter weapon barrel" class="input-text">
+            <input id="input-laser" type="text" value="" placeholder="Enter weapon laser" class="input-text">
+            <input id="input-optic" type="text" value="" placeholder="Enter weapon optic" class="input-text">
+            <input id="input-stock" type="text" value="" placeholder="Enter weapon stock" class="input-text">
+            <input id="input-underbarrel" type="text" value="" placeholder="Enter weapon underbarrel" class="input-text">
+            <input id="input-ammunition" type="text" value="" placeholder="Enter weapon ammunition" class="input-text">
+            <input id="input-rear_grip" type="text" value="" placeholder="Enter weapon rear grip" class="input-text">
+            <input id="input-perk" type="text" value="" placeholder="Enter weapon perk" class="input-text">
+
+            <p>Choose A Game </p>
+            <select id="games" name="games">
+                <option value="1">WarZone</option>
+                <option value="2">Black-Ops Cold War</option>
+            </select>
+        <br><br>
+
+        <input id= 'create-button' type="submit" name="submit" value="Create New Weapon" class="btn btn-dark">
+        </form>
+    </div>
+    <div id="weapons-container">
+
+    </div>
+    
+</body>
+</html>
