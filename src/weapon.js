@@ -20,34 +20,34 @@ class Weapon {
 
     renderWeapon(){
         return`
-        <div class="col-md-4">
-         <div class="card mb-4 shadow-sm">
-         <img src="${this.image}" class="card-img-top" alt="...">
+     
 
-          <div class="card-body">
-            <h5 class="card-title">${this.name}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">${this.weapon_type}</h6>
-            <p>Attachments:</p>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Muzzle: ${this.muzzle || ""} | Barrel: ${this.barrel || ""}</li>
-                    <li class="list-group-item">Laser: ${this.laser || ""} | Optic: ${this.optic || ""}</li>
-                    <li class="list-group-item">Ammunition: ${this.ammunition || ""} | Rear Grip: ${this.rear_grip || ""}</li>
-                    <li class="list-group-item">Perk: ${this.perk || ""}</li>
+        
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="${this.image}" class="card-img-top" alt="...">
+
+                <div class="card-body">
+                    <h5 class="card-title">${this.name}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${this.weapon_type}</h6>
+                    <p>Attachments:</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Muzzle: ${this.muzzle || ""} | Barrel: ${this.barrel || ""}</li>
+                        <li class="list-group-item">Laser: ${this.laser || ""} | Optic: ${this.optic || ""}</li>
+                        <li class="list-group-item">Ammunition: ${this.ammunition || ""} | Rear Grip: ${this.rear_grip || ""}</li>
+                        <li class="list-group-item">Perk: ${this.perk || ""}</li>
                     
-                </ul>
+                    </ul>
        
             
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-              </div>
-              <small class="text-muted">${this.game.name}</small>
-            </div>
-          </div>
-        </div>
-      </div>
-        `
+                <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">${this.game.name}</small>
+                </div>
+                </div>
+                </div>
+            </div>`
+        
+        
 
 
         // return `
