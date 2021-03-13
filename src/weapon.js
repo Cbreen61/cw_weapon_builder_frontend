@@ -25,7 +25,7 @@ class Weapon {
         
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
-                    <img src="${this.image}" class="card-img-top" alt="...">
+                    <img src="${this.image || "https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/warzone/strategy-guide/03c-weapons/03C-WEAPONS-005.jpg"}" class="card-img-top" height="150" width="150" alt="...">
 
                 <div class="card-body">
                     <h5 class="card-title">${this.name}</h5>
