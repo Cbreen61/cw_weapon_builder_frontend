@@ -1,5 +1,7 @@
 const BASE_URL = "http://[::1]:3000/api/v1/weapons"
 
+
+
 document.addEventListener('DOMContentLoaded', ()=>{
     getWeapons();
     createWeaponForm();
@@ -139,6 +141,7 @@ function weaponsFormSubmission(){
     
 }
 
+
 function deleteWeapon(){
     let weaponId = parseInt(event.target.dataset.id)
 
@@ -147,3 +150,4 @@ function deleteWeapon(){
     })
     this.location.reload()
 }
+

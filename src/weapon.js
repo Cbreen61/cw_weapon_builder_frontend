@@ -48,8 +48,7 @@ class Weapon {
     
     }
 
-    
-
 
 }
-Weapon.all = [];
+
+const weaponsAll = Weapon.all = [];
