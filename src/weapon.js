@@ -1,4 +1,6 @@
 class Weapon {
+
+    static all = []
     constructor(id, name, weapon_type, image, muzzle, barrel, laser, optic, stock, underbarrel, ammunition, rear_grip, perk, game){
         this.id = id
         this.name = name
@@ -51,4 +53,3 @@ class Weapon {
 
 }
 
-const weaponsAll = Weapon.all = [];

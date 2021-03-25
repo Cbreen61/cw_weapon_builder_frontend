@@ -1,8 +1,12 @@
-const BASE_URL = "http://[::1]:3000/api/v1/weapons"
+const BASE_URL = "http://[::1]:3000/api/v1/weapons";
 
 
 
-document.addEventListener('DOMContentLoaded', ()=>{
+
+
+
+
+document.addEventListener("DOMContentLoaded", ()=>{
     getWeapons();
     createWeaponForm();
 
@@ -20,6 +24,7 @@ function getWeapons(){
         }
     })
 }
+
 function createWeaponForm(){
     let weaponsForm = document.getElementById("weapons-form")
 
@@ -151,3 +156,23 @@ function deleteWeapon(){
     this.location.reload()
 }
 
+
+function handleSearch(){
+  let inputValue = document.getElementById("search").value;
+  let filterdArray = Weapon.all.filter(w => {
+    return w.game.name.toLowerCase() == inputValue.toLowerCase()
+  })
+  const wpA = document.getElementById("weapons-container")
+  wpA.innerHTML = ""
+
+  filterdArray.forEach(w => {
+    w.renderWeapon();
+  })
+
+}
+
+function allWeapons() {
+  const wpA = document.getElementById("weapons-container")
+  wpA.innerHTML = ""
+    getWeapons();
+}
