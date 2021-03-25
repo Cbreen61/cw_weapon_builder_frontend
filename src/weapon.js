@@ -19,10 +19,8 @@ class Weapon {
     }
 
     renderWeapon(){
-        return`
-     
-
-        
+        let weaponDiv = document.getElementById("weapons-container")   
+        weaponDiv.innerHTML +=`     
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
                     <img src="${this.image || "https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/warzone/strategy-guide/03c-weapons/03C-WEAPONS-005.jpg"}" class="card-img-top" height="150" width="150" alt="...">
@@ -43,29 +41,10 @@ class Weapon {
                 <div class="d-flex justify-content-between align-items-center">
                     <small class="text-muted">${this.game.name}</small>
                 </div>
-                </div>
+                </div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-dark btn-sm" data-id=${this.id} onclick="deleteWeapon()">Delete Weapon</button>
                 </div>
             </div>`
-        
-        
-
-
-        // return `
-        //      <div data-id=${this.id}>
-        //         <h2>${this.name}</h2>
-        //         <img src=${this.image}>
-        //         <li>Weapon Type:${this.weapon_type}</li>
-        //         <li>Muzzle:${this.muzzle || ""}</li>
-        //         <li>Barrel:${this.barrel || ""}</li>
-        //         <li>Laser:${this.laser || ""}</li>
-        //         <li>Optic:${this.optic || ""}</li>
-        //         <li>Stock:${this.stock || ""}</li>
-        //         <li>Underbarrel:${this.underbarrel || ""}</li>
-        //         <li>Ammunition:${this.ammunition || ""}</li>
-        //         <li>Rear Grip:${this.rear_grip || ""}</li>
-        //         <li>Perk:${this.perk || ""}</li>
-        //         <li>Game:${this.game.name || ""}</li>
-        //     </div>`;
     
     }
 
